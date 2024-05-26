@@ -27,20 +27,30 @@ let storeProduct = (event)=> {
 }else {
         alert("product id must be unique")
 }
-    //products.push(tempProduct);
+    reset();
+}
+let reset = (event)=> {
+    setPid("")
+    setPname("")
+    setPrice("")
+    setUrl("")
 }
     return(
         <div>
             <h4>Add Product</h4>
             <form onSubmit={storeProduct}>
                 <label>PId</label>
-    <input type="number" name="pid" onChange={(event)=>setPid(event.target.value)}/><br/>
+    <input type="number" name="pid" onChange={(event)=>setPid(event.target.value)}
+    value={pid}/><br/>
                 <label>PName</label>
-    <input type="text" name="pname" onChange={(event)=>setPname(event.target.value)}/><br/>
+    <input type="text" name="pname" onChange={(event)=>setPname(event.target.value)}
+    value={pname}/><br/>
                 <label>Price</label>
-    <input type="number" name="price" onChange={(event)=>setPrice(event.target.value)}/><br/>
+    <input type="number" name="price" onChange={(event)=>setPrice(event.target.value)}
+    value={price}/><br/>
                 <label>Url</label>
-    <input type="url" name="url" onChange={(event)=>setUrl(event.target.value)}/><br/>
+    <input type="url" name="url" onChange={(event)=>setUrl(event.target.value)}
+    value={url}/><br/>
     <input type="submit" value="Store Product"/>
     <input type="reset" value="reset"/>
             </form>
