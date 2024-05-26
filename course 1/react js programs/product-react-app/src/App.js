@@ -5,7 +5,7 @@ import Product from './Product';
 function App() {
   return (
     <div className="App">
-      <h3>Product Management System</h3>
+      <h3 style={{"color":"blueviolet"}}>Product Management System</h3>
       <Product></Product>
     </div>
   );
