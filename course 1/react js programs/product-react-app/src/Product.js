@@ -35,6 +35,13 @@ let reset = (event)=> {
     setPrice("")
     setUrl("")
 }
+
+let deleteProduct = (event,index)=> {
+    console.log(index)
+    let tempProduct = [...products];   // copy all product in tempProdut variable only values
+    tempProduct.splice(index,1) // index 0 and remove 1 record 
+    setProducts(tempProduct);// update new array product  
+}
     return(
         <div>
             <h4>Add Product</h4>
@@ -63,6 +70,7 @@ let reset = (event)=> {
                     <th>PName</th>
                     <th>Price</th>
                     <th>URL</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -73,6 +81,8 @@ let reset = (event)=> {
                         <td>{p.pname}</td>
                         <td>{p.price}</td>
                         <td><img src={p.url} width="100px" height="100px"/></td>
+        <td><input type="button" value="Delete" 
+        onClick={(event)=>deleteProduct(event,index)}/></td>
                         </tr>)
                 }
                 </tbody>
