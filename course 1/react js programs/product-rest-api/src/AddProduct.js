@@ -5,14 +5,21 @@ function AddProduct() {
 let [id,setId]=useState("");
 let [pname,setPname]=useState("");
 let [price,setPrice]=useState("");
-
+let [msg,setMessage]=useState("")
 let storeProduct=(event)=> {
-    event.preventDefault();
+    event.preventDefault();     // disable default form action 
     let product = {"id":id,"pname":pname,"price":price}
     //console.log(product)
-    axios.post("http://localhost:3000/products",product).then(result=> {
-        console.log(result)
-    }).catch(error=>console.log(error))
+    if(id.length==0 || pname.length==0 || price.length==0){
+            //alert("plz enter all product info")
+            setMessage("Plz enter all information")
+    }else {
+        axios.post("http://localhost:3000/products",product).then(result=> {
+            console.log(result)
+        }).catch(error=>console.log(error))
+        setMessage("")
+    }
+ 
     reset();
 }
 let reset = (event)=> {
@@ -22,6 +29,7 @@ let reset = (event)=> {
 }
     return(
         <div>
+            <span style={{"color":"red"}}>{msg}</span>
             <h4>Add Product</h4>
             <form onSubmit={storeProduct}>
                 <label>PId</label>
