@@ -1,15 +1,31 @@
+import { useState } from "react";
 import Child1 from "./Child1";
 import Child2 from "./Child2";
 
 function Parent() {
+let [parentName,setParentName]=useState("Ajay");
+let [child1ReceiveName,setChild1ReceiveName]=useState("");  // receive value from child1
+let [child2ReceiveName,setChild2ReceiveName]=useState("");  // receive value from child1
 
-
+let child1Data = (data)=> {
+        //console.log(data)
+        setChild1ReceiveName(data);
+}
+let child2Data = (data)=> {
+    //console.log(data)
+    setChild2ReceiveName(data);
+}
     return(
         <div style={{"backgroundColor":"yellow"}}>
             <h4>Parent Component</h4>
-            <Child1></Child1>
+            <p>Parent name in parent component is <b>{parentName}</b></p>
+            <p>Child1 name in parent component is <b>{child1ReceiveName}</b></p>
+            <p>Child2 name in parent component is <b>{child2ReceiveName}</b></p>
             <hr/>
-            <Child2></Child2>
+            <Child1 pname={parentName} handleCallback={child1Data}></Child1>
+            <hr/>
+            <Child2 pname={parentName} handleName={child2Data}></Child2>
+            <hr/>
         </div>
     )
 }
