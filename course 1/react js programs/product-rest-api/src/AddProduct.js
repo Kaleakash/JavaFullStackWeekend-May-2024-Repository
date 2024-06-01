@@ -7,6 +7,7 @@ let [pname,setPname]=useState("");
 let [price,setPrice]=useState("");
 let [msg,setMessage]=useState("")
 let storeProduct=(event)=> {
+    console.log(event)
     event.preventDefault();     // disable default form action 
     let product = {"id":id,"pname":pname,"price":price}
     //console.log(product)

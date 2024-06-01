@@ -6,16 +6,6 @@
       "price": 55000
     },
     {
-      "id": "101",
-      "pname": "Computer",
-      "price": 35000
-    },
-    {
-      "id": "3",
-      "pname": "Pen Drive",
-      "price": "1500"
-    },
-    {
       "id": "3",
       "pname": "Mobile",
       "price": "26000"
