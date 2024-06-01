@@ -2,13 +2,12 @@
   "products": [
     {
       "id": "100",
-      "pname": "TV",
-      "price": 55000
+      "pname": "Sony TV",
+      "price": "60000"
     },
     {
       "id": "3",
-      "pname": "Mobile",
-      "price": "26000"
+      "price": "3000"
     },
     {
       "id": 100,
