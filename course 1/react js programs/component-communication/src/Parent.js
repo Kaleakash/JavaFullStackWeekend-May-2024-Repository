@@ -22,9 +22,9 @@ let child2Data = (data)=> {
             <p>Child1 name in parent component is <b>{child1ReceiveName}</b></p>
             <p>Child2 name in parent component is <b>{child2ReceiveName}</b></p>
             <hr/>
-            <Child1 pname={parentName} handleCallback={child1Data}></Child1>
+    <Child1 pname={parentName} handleCallback={child1Data} child2={child2ReceiveName}></Child1>
             <hr/>
-            <Child2 pname={parentName} handleName={child2Data}></Child2>
+    <Child2 pname={parentName} handleName={child2Data} child1={child1ReceiveName}></Child2>
             <hr/>
         </div>
     )

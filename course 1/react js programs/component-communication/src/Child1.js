@@ -9,6 +9,7 @@ let [child1Name,setChild1Name]=useState("Ravi");    // state
             <p>Parent name in child1 component is <b>{props.pname}</b></p>
             <p>Child name in child1 component is <b>{child1Name}</b></p>
             <p>{props.handleCallback(child1Name)}</p>
+            <p>Child2 name in Child1 component is <b>{props.child2}</b></p>
         </div>
     )
 }
