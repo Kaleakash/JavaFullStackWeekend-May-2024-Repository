@@ -7,7 +7,7 @@ function Child8() {
     return(
         <div>
             <h4>Child8 Component</h4>
-            <p>Name is child8 is {data}</p>
+            <p>Name in Child1 component is {data.name} {data.city}</p>
         </div>
     )
 }

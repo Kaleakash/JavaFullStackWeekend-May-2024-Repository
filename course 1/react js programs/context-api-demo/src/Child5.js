@@ -7,7 +7,7 @@ let data = useContext(MyContext);   // access context reference
     return(
         <div>
             <h4>Child5 Component</h4>
-            <p>Name in child5 component is {data}</p>
+            <p>Name in Child5 component is {data.name} {data.city}</p>
         </div>
     )
 }
