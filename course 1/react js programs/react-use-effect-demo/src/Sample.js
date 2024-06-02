@@ -8,6 +8,7 @@ let fun1 = (event)=> {
 }
 //fun1();
 useEffect(()=> {
+    //fetch()
     console.log("this useEffectfunction called...")
     
 },[a,b])
