@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import FirstComponent from './FirstComponent';
+import SecondComponent from './SecondComponent';
+import SkillSet from './SkillSet';
+import IncrementCounter from './IncrementCouter';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h4>React with Redux Concept</h4>
+     <FirstComponent></FirstComponent>
+     <SecondComponent></SecondComponent>
+     <hr/>
+     <SkillSet></SkillSet>
+     <hr/>
+     <IncrementCounter></IncrementCounter>
     </div>
   );
 }
