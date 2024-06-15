@@ -13,6 +13,7 @@ export class TemplateReferenceComponent {
   }
 
   checkUser(a:any,b:any):void {
+    //console.log(a)
     let emailid = a.value;
     let passowrd = b.value;
    
