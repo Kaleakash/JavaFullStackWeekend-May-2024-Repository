@@ -10,7 +10,7 @@ import { StringInterpolationComponent } from './string-interpolation/string-inte
 import { PropertyBindingComponent } from './property-binding/property-binding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+  import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AngularFormsComponent } from './angular-forms/angular-forms.component';
 import { TemplateReferenceComponent } from './template-reference/template-reference.component';
 import { TdfLoginComponent } from './tdf-login/tdf-login.component';
@@ -33,7 +33,7 @@ import { MdfLoginComponent } from './mdf-login/mdf-login.component';
     MdfLoginComponent
   ],
   imports: [
-    BrowserModule,FormsModule,ReactiveFormsModule
+      BrowserModule,FormsModule,ReactiveFormsModule
   ],
   //providers: [],
   bootstrap: [AppComponent]
