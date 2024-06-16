@@ -19,6 +19,7 @@ import { LoginService } from './login.service';
 import { FakeComponent } from './fake/fake.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FakeService } from './fake.service';
+import { CustomPipePipe } from './custom-pipe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { FakeService } from './fake.service';
     TemplateReferenceComponent,
     TdfLoginComponent,
     MdfLoginComponent,
-    FakeComponent
+    FakeComponent,
+    CustomPipePipe
   ],
   imports: [
       BrowserModule,FormsModule,ReactiveFormsModule,HttpClientModule

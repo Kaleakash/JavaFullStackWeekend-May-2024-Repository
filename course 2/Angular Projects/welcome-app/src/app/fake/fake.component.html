@@ -5,7 +5,8 @@
     <div *ngFor="let fake of fakeInfo">
         <span>
         <img src={{fake.image}} width="100px" height="100px"/>    
-            {{fake.id}} ) {{fake.title}} {{fake.price}}
+           
+            {{fake.id | customPipe}} ) {{fake.title|uppercase}} {{fake.price|currency:'INR'}}
         </span>
     </div>
 </div>
