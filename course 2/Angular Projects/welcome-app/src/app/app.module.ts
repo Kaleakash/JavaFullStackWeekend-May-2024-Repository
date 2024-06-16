@@ -16,7 +16,9 @@ import { TemplateReferenceComponent } from './template-reference/template-refere
 import { TdfLoginComponent } from './tdf-login/tdf-login.component';
 import { MdfLoginComponent } from './mdf-login/mdf-login.component';
 import { LoginService } from './login.service';
-
+import { FakeComponent } from './fake/fake.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FakeService } from './fake.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,10 +33,11 @@ import { LoginService } from './login.service';
     AngularFormsComponent,
     TemplateReferenceComponent,
     TdfLoginComponent,
-    MdfLoginComponent
+    MdfLoginComponent,
+    FakeComponent
   ],
   imports: [
-      BrowserModule,FormsModule,ReactiveFormsModule
+      BrowserModule,FormsModule,ReactiveFormsModule,HttpClientModule
   ],
   providers: [LoginService], // register service class details
   bootstrap: [AppComponent]
