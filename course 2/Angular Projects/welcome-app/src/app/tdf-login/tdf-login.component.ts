@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MyService } from '../custom.service';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-tdf-login',
@@ -9,6 +10,10 @@ import { MyService } from '../custom.service';
 })
 export class TdfLoginComponent {
 msg:string ="";
+
+constructor(public ls:LoginService){  // DI for Service class 
+
+}
   checkUser(logingRef:NgForm): void {
     console.log("event fired")
     console.log(logingRef.value)
@@ -19,8 +24,9 @@ msg:string ="";
     // }else {
     //   this.msg="failure";
     // }
-    let obj = new MyService();
-    this.msg = obj.checkUserInfo(login);
+    //let obj = new MyService();
+    //this.msg = obj.checkUserInfo(login);
+    this.msg = this.ls.checkUserInfo(login);
     logingRef.reset();
   }
 }

@@ -15,6 +15,7 @@ import { AngularFormsComponent } from './angular-forms/angular-forms.component';
 import { TemplateReferenceComponent } from './template-reference/template-reference.component';
 import { TdfLoginComponent } from './tdf-login/tdf-login.component';
 import { MdfLoginComponent } from './mdf-login/mdf-login.component';
+import { LoginService } from './login.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { MdfLoginComponent } from './mdf-login/mdf-login.component';
   imports: [
       BrowserModule,FormsModule,ReactiveFormsModule
   ],
-  //providers: [],
+  providers: [LoginService], // register service class details
   bootstrap: [AppComponent]
 })
 export class AppModule { }

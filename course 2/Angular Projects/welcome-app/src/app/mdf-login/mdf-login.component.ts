@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MyService } from '../custom.service';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-mdf-login',
@@ -13,9 +14,11 @@ loginRef = new FormGroup({
   emailid:new FormControl(),
   password:new FormControl()
 });
-// constructor(){
-//   this.loginRef.get("emailid")?.setValue("akash@gmail.com");
-// }
+
+constructor(public ls:LoginService){   // DI using constructor base 
+
+}
+
 msg:string ="";
 checkUser():void {
   
@@ -26,8 +29,10 @@ checkUser():void {
   // }else {
   //     this.msg="failure try once again"
   // }
-  let obj = new MyService();
-  this.msg = obj.checkUserInfo(login);
+  //let obj = new MyService();
+  //this.msg = obj.checkUserInfo(login);
+  
+  this.msg = this.ls.checkUserInfo(login);
   this.loginRef.reset();
 }
 
