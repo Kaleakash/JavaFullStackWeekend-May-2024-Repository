@@ -17,3 +17,4 @@ num2.unshift(300)
 num2.unshift(400)               // adding element from front 
 console.log(num2.length)          //  size is 4
 console.log(num2)               // string format 
+console.log(num2.join("-"));
