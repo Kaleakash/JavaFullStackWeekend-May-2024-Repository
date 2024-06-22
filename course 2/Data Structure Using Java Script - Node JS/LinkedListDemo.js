@@ -36,6 +36,26 @@ class LinkedList {
             //console.log("NULL")
 
         }
+        insertAt(index,newNode){
+            let node = this.head;           // first node 
+            if(index==0){
+                newNode.next=node;
+                this.head=newNode;
+                return;
+            }
+
+            while(--index){
+                    console.log("while loop")
+                    if(node.next!=null){
+                        node = node.next;
+                    }else {
+                        throw new Error("out of index")
+                    }
+            }
+            let tempVal = node.next;
+            node.next = newNode;
+            newNode.next=tempVal;
+        }
 }
 
 let myList = new LinkedList();
@@ -43,8 +63,12 @@ let firstNode = new Node(100);
 let secondNode = new Node(200);
 let thirdNode = new Node(300);
 let fourthNode = new Node(400);
+let newFirstNode = new Node(111);
 myList.appendNode(firstNode);
     myList.appendNode(secondNode);      // 200
 myList.appendNode(thirdNode);
 myList.appendNode(fourthNode);
+myList.printList();
+myList.insertAt(3,newFirstNode);
+console.log()
 myList.printList();
