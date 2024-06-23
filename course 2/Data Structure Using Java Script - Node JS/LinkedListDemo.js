@@ -5,6 +5,7 @@ class Node {
     }
 }
 class LinkedList {
+        
         constructor(head=null){
             console.log("linked list constructor called...")
             this.head=head;    // first node with head null value. 
@@ -77,6 +78,24 @@ class LinkedList {
             }
             node.next=node.next.next;
         }
+
+        reverse() {
+            let previousNode = null;        // initial null value 
+            let currentNode = this.head;        // first node we assign the currentNode variable 
+            if(currentNode==null){
+                return;
+            }
+            let nextNode;
+            while(currentNode){
+                nextNode=currentNode.next;      // so now nextNode is 2nd node 
+
+                currentNode.next=previousNode;
+                previousNode=currentNode;
+
+                currentNode=nextNode;
+            }
+            this.head=previousNode;
+        }
 }
 
 let myList = new LinkedList();
@@ -85,7 +104,7 @@ let secondNode = new Node(200);
 let thirdNode = new Node(300);
 let fourthNode = new Node(400);
 //let newFirstNode = new Node(111);
-myList.appendNode(firstNode);
+myList.appendNode(firstNode);       // passing node object in linked list class. 
 myList.appendNode(secondNode);      // 200
 myList.appendNode(thirdNode);
 myList.appendNode(fourthNode);
@@ -93,6 +112,13 @@ myList.appendNode(fourthNode);
 // myList.insertAt(3,newFirstNode);
 // console.log()
 myList.printList();
-myList.removeNode(3);           // 1 position node as first node with data or value as 200
+//myList.removeNode(3);           // 3 position node as first node with data or value as 300
+
+myList.reverse();
 console.log()
+
+myList.printList();
+myList.reverse();
+console.log()
+
 myList.printList();
