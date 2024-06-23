@@ -10,7 +10,7 @@ class Stack {
         } else {
             console.log("stack overflow")
         }
-    }
+    }// <html></html>  {"key":value}
     pop() {             // it remove from stack ie top most element. 
         if(this.array.length==0){
             return "Stack is empty or Underflow";
