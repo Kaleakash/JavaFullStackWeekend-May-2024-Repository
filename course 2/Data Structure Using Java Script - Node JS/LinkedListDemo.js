@@ -56,6 +56,27 @@ class LinkedList {
             node.next = newNode;
             newNode.next=tempVal;
         }
+
+        removeNode(index){
+            let node = this.head;// making node as first node 
+            if(index==0){
+                if(node!=null){         // if there is no node present in list 
+                        node = node.next;
+                        this.head = node;
+                }else {
+                    throw new Error("No node present")
+                }
+                return;
+            }
+            while(--index){
+                if(node.next!=null){
+                    node = node.next;
+                }else {
+                    throw new Error("No node present")
+                }
+            }
+            node.next=node.next.next;
+        }
 }
 
 let myList = new LinkedList();
@@ -63,12 +84,15 @@ let firstNode = new Node(100);
 let secondNode = new Node(200);
 let thirdNode = new Node(300);
 let fourthNode = new Node(400);
-let newFirstNode = new Node(111);
+//let newFirstNode = new Node(111);
 myList.appendNode(firstNode);
-    myList.appendNode(secondNode);      // 200
+myList.appendNode(secondNode);      // 200
 myList.appendNode(thirdNode);
 myList.appendNode(fourthNode);
+// myList.printList();
+// myList.insertAt(3,newFirstNode);
+// console.log()
 myList.printList();
-myList.insertAt(3,newFirstNode);
+myList.removeNode(3);           // 1 position node as first node with data or value as 200
 console.log()
 myList.printList();
