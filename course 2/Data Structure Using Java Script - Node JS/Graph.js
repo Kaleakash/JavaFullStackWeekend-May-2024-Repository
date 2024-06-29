@@ -67,6 +67,17 @@ class Graph {
                 this.adjacencyList[city2].push({"city":city1,"distance":distance});
             }
        }
+
+       printGraph() {
+        console.log("City Connection Details")
+
+            for(let city in this.adjacencyList){
+                //console.log(city);
+    let connection = this.adjacencyList[city].map(obj=>" Connected to "+obj.city+" with distance is "+obj.distance+" km");
+                console.log(city+"->"+connection)
+                console.log()
+            }
+       }
 }
 let graph = new Graph();
 graph.addCity("Bangalore");
@@ -83,7 +94,8 @@ graph.addConnection("Mumbai","Delhi",1600);
 graph.addConnection("Hyderabad","Delhi",1800);
 graph.addConnection("Hyderabad","Pune",950);
 
-console.log(graph.adjacencyList)
+//console.log(graph.adjacencyList)
+graph.printGraph();
 
 
 
