@@ -87,7 +87,7 @@ graph.addCity("Pune");
 graph.addCity("Mumbai");
 
 graph.addConnection("Bangalore","Hyderabad",700);
-graph.addConnection("Bangalore","Mysore",160);
+        graph.addConnection("Bangalore","Mysore",160);
 graph.addConnection("Bangalore","Pune",950);
 graph.addConnection("Pune","Mumbai",250);
 graph.addConnection("Mumbai","Delhi",1600);
