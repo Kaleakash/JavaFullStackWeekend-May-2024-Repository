@@ -18,7 +18,9 @@ function bubbleSort(arr){
                 swapped=true;
             }
         }
+        
     }while(swapped);
+
     return arr;
 }
 
