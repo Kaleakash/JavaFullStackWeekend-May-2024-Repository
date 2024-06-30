@@ -1,4 +1,4 @@
-let unsortedData = [4,1,7,2,5,9,8,3,56,34,90,45];
+let unsortedData = [4,1,7,2];
 console.log("unsorted data "+unsortedData);
 //mergeSort(unsortedData);
 let sortedData = mergeSort(unsortedData);
@@ -40,10 +40,12 @@ function merge(leftArray,rightArray){
                 rightIndex++;
             }
             console.log("LeftArray "+leftArray+"Right Array "+rightArray)
+            console.log("Result "+result);
     }
 
-    let remainingData = result.concat(leftArray.slice(leftIndex)).concat(rightArray.slice(rightIndex));
-    return remainingData;
+   let remainingData = result.concat(leftArray.slice(leftIndex)).concat(rightArray.slice(rightIndex));
+   return remainingData;
+    //return result;
 }
 
 // console.log(Math.ceil(10.1)) // 11
