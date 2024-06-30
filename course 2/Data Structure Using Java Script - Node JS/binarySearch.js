@@ -29,7 +29,7 @@ function binarySearch(arr,target){
         }
                 // if target is greater than ,  ignore the left half 
         console.log(`array mid arr[${mid}] and target value ${target}] array mid value `+arr[mid])
-        if(arr[mid] > target){
+        if(arr[mid] > target){  // > data in desc  < data in asc 
             console.log("true part")
             left=mid+1;
         }else {     // it target is less than , ignore the right half
