@@ -6,7 +6,7 @@ console.log("sorted data "+sortedData);
 
 
 function mergeSort(arr){
-    if(arr.length<=0){
+    if(arr.length<=1){// 
         return arr;
     }else {
    let mid = Math.floor(arr.length / 2);      // 4
@@ -17,10 +17,10 @@ function mergeSort(arr){
    // recursively sort each halves 
    let sortedLeftHalf = mergeSort(leftHalf);
    let sortedRightHalf = mergeSort(rightHalf);
-
-   result = merge(sortedLeftHalf,sortedRightHalf);
-   return result;
-    }
+	
+   let result = merge(sortedLeftHalf,sortedRightHalf);
+    	return result;
+	}
 }
 
 function merge(leftArray,rightArray){
@@ -31,7 +31,7 @@ function merge(leftArray,rightArray){
     // merge left and right into result in sorted order. 
     while(leftIndex < leftArray.length && rightIndex < rightArray.length){
         
-            if(leftArray[leftIndex] > rightArray[rightArray]){
+            if(leftArray[leftIndex] > rightArray[rightIndex]){
                 result.push(leftArray[leftIndex])
                 leftIndex++;
             }else {
