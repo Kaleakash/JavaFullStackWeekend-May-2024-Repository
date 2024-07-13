@@ -19,7 +19,7 @@ public class TakingValueThrougKeyboard {
 //		System.out.println("Enter the salary");
 //		float salary = sc.nextFloat();
 //		System.out.println("id is "+id);
-//		System.out.println("name is "+name);
+//		Syste	m.out.println("name is "+name);
 //		System.out.println("salary is "+salary);
 		
 		System.out.println("how many record do you want to store");
