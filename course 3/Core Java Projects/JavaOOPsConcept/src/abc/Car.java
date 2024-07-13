@@ -4,7 +4,7 @@ public class Car {
 	// property 
 	int wheel;
 	String colour;
-	float price;
+	float price;			// instance variable. 
 	
 	// behaviour 
 	void start() {
@@ -20,5 +20,12 @@ public class Car {
 	void stop() {
 		System.out.println("car stop");
 	}
-	
+	void carInfo(String name) {
+		String info="Car details "+name;		// local variable.
+		System.out.println(info);
+		System.out.println("wheel "+wheel);
+		System.out.println("colour "+colour);
+		System.out.println("price "+price);
+		
+	}
 }
