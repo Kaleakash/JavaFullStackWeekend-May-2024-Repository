@@ -15,6 +15,28 @@ public class EmployeeTest {
 		
 		mgr.disEmp();		// id,name,salary
 		mgr.disMgr();		// numberofemp
+		
+		System.out.println("---------------------------");
+		System.out.println("Developer information");
+		Developer dev = new Developer();
+		dev.readEmp();
+		dev.readDev();
+		
+		dev.disEmp();
+		dev.disDev();
+		
+		System.out.println("---------------------------");
+		System.out.println("Project Manager information");
+		ProjectManager pmgr = new ProjectManager();
+		pmgr.readEmp();
+		pmgr.readMgr();
+		pmgr.readPmgr();
+		
+		
+		
+		pmgr.disEmp();
+		pmgr.disMgr();
+		pmgr.disPmgr();
 	}
 
 }
