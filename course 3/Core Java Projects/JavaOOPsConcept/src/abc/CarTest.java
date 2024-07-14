@@ -34,7 +34,7 @@ public class CarTest {
 		
 		System.out.println("-----------------------");
 		
-		Car nexon = new Car(4,"Blue",1250000);
+		Car nexon = new Car(4,"Blue",1250000);		//dynamic value 
 		nexon.carInfo("Nexon");
 	}
 
