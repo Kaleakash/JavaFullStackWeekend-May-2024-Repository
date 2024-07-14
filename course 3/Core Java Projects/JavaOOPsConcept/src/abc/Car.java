@@ -6,6 +6,13 @@ public class Car {
 	String colour;
 	float price;			// instance variable. 
 	
+	Car() {			// empty constructor 
+		System.out.println("object created...");
+		wheel=4;
+		colour="Black";
+		price = 1000000;			// default value set for all object whenever memory created
+	}
+	
 	// behaviour 
 	void start() {
 		System.out.println("car start");
