@@ -2,7 +2,7 @@ package abc;		// java.util
 
 public class Car {
 	// property 
-	int wheel;
+	int wheel=4;
 	String colour;
 	float price;			// instance variable. 
 	
