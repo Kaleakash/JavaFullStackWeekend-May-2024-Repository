@@ -4,9 +4,9 @@ public class EmployeeTest {
 
 	public static void main(String[] args) {
 		System.out.println("Generic employee information");
-		Employee emp = new Employee();
-		emp.readEmp();
-		emp.disEmp();
+//		Employee emp = new Employee();
+//		emp.readEmp();
+//		emp.disEmp();
 		
 		
 		
