@@ -2,6 +2,17 @@ package statickeyword;
 class Employee {
 	int id;			// non static 
 	static int mgrid;	// static 
+	
+	static {
+		System.out.println("static block - only once ");
+	}
+	
+	{
+		System.out.println("init block - pre-constructor");
+	}
+	public Employee() {
+	System.out.println("while memory creation time");
+	}
 	void dis1() {
 		System.out.println("Employee id "+id);
 		System.out.println("Manager id "+mgrid);
