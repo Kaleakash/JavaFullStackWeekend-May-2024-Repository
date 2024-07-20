@@ -1,5 +1,6 @@
 package finalkeyword;
 final class Bike {
+	final int WHEEL=4;
 	final void speed() {
 		System.out.println("60km/hr");
 	}
