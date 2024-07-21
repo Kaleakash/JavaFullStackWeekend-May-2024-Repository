@@ -6,13 +6,14 @@ class VoteException extends Exception {
 	public VoteException(String msg) {
 		//super();
 		super(msg);			// help to call parameter constructor of Exception class to set the message 
+		System.out.println("Hello");
 	}
 }
 public class ThrowKeywordExample {
 
 	public static void main(String[] args) {
 		int age =15;
-		try {
+		try {						// number/0 new ArithmeticException();
 			
 		if(age<=18) {
 			//throw new Exception();	// generic exception 
@@ -23,7 +24,7 @@ public class ThrowKeywordExample {
 			System.out.println("You Can Vote!");
 		}
 		
-	}catch(Exception e) {
+	}catch(VoteException e) {
 		System.out.println(e);
 	}
 
