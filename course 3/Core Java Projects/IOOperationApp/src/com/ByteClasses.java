@@ -1,5 +1,7 @@
 package com;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -33,17 +35,30 @@ public class ByteClasses {
 //		fos.close();
 //		System.out.println("Data stored...");
 		
+//		// source --> file, target --> file or console
+//				FileInputStream fis = new FileInputStream("C:\\Users\\akash\\Desktop\\EC2 Plugin Install.txt");
+//				FileOutputStream fos = new FileOutputStream("demo.txt");
+//				int ch;
+//				while((ch=fis.read()) != -1) {		//EOF : end of the file in java is -1
+//					System.out.print((char)ch);
+//					fos.write(ch);
+//				}
+//				fis.close();
+//				fos.close();
+//				System.out.println("Data copied...");
+		
 		// source --> file, target --> file or console
-				FileInputStream fis = new FileInputStream("C:\\Users\\akash\\Desktop\\EC2 Plugin Install.txt");
-				FileOutputStream fos = new FileOutputStream("demo.txt");
-				int ch;
-				while((ch=fis.read()) != -1) {		//EOF : end of the file in java is -1
-					System.out.print((char)ch);
-					fos.write(ch);
-				}
-				fis.close();
-				fos.close();
-				System.out.println("Data copied...");
+		FileInputStream fis = new FileInputStream("C:\\Users\\akash\\Desktop\\EC2 Plugin Install.txt");
+		BufferedInputStream bis = new BufferedInputStream(fis,512);
+		FileOutputStream fos = new FileOutputStream("demo.txt");
+		int ch;
+		while((ch=bis.read()) != -1) {		//EOF : end of the file in java is -1
+			System.out.print((char)ch);
+			fos.write(ch);
+		}
+		fis.close();
+		fos.close();
+		System.out.println("Data copied...");
 	}
 
 }
