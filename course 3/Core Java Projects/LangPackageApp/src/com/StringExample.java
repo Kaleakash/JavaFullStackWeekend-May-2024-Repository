@@ -14,16 +14,26 @@ public class StringExample {
 //	System.out.println(str1.indexOf('o'));
 //	System.out.println(str1.charAt(0));
 		
-		String name1 = "Raj";			// one memory 
-		String name2 = "Raj";			//	same memory 
-		String name3  = new String("Raj");	// new memory 
-		String name4 = new String("Raj");	// new memory 
-		if(name3.equals(name1)) {
-			System.out.println("Equal");
-		}else {
-			System.out.println("Not Equal");
-		}
-		
+//		String name1 = "Raj";			// one memory 
+//		String name2 = "Raj";			//	same memory 
+//		String name3  = new String("Raj");	// new memory 
+//		String name4 = new String("Raj");	// new memory 
+//		if(name3.equals(name1)) {
+//			System.out.println("Equal");
+//		}else {
+//			System.out.println("Not Equal");
+//		}
+		String msg="Hello";		// new memory 
+		System.out.println(msg);
+			System.out.println(msg.toLowerCase());
+		System.out.println(msg);
+		msg = msg+" How r you";	// old memory get destroy msg refer to new memory with msg +"how r you"
+		System.out.println(msg);
+		System.out.println("----------------");
+		StringBuffer sb = new StringBuffer("Hello");
+		System.out.println(sb);
+			System.out.println(sb.append(" How r you"));
+		System.out.println(sb);
 	}
 
 }
