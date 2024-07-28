@@ -14,6 +14,8 @@ public class HashSetDemo {
 		hs.add(10.10);
 		hs.add("Ravi");
 		hs.add(true);
+		A obj1 = new A();
+		hs.add(obj1);
 		hs.add(new A());
 		hs.add(new B());
 		System.out.println(hs);
