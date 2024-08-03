@@ -17,7 +17,7 @@ public class App {
 		String con;
 		String result;
 		do {
-			System.out.println("1:Add Product");
+			System.out.println("1:Add Product 2: Delete Product 3 : Update Product Price");
 			System.out.println("Plz enter your choice");
 			choice = sc.nextInt();
 			switch (choice) {
@@ -30,8 +30,26 @@ public class App {
 			       Product  p = new Product(pid, pname, price);
 			       result = ps.addProduct(p);
 			       System.out.println(result);
-				break;
-
+			       break;
+			
+			case 2 :System.out.println("Plz enter the product id to delete");
+		       	pid = sc.nextInt();
+		       	result = ps.deleteProduct(pid);
+		       	System.out.println(result);
+		       	break;
+		    
+			case 3: System.out.println("Plz enter the product id to update the price");
+		       pid = sc.nextInt();
+		       System.out.println("Plz enter the new product price");
+		       price = sc.nextFloat();
+		       Product  p1 = new Product();
+		       p1.setPid(pid);
+		       p1.setPrice(price);
+		       result = ps.updateProduct(p1);
+		       System.out.println(result);
+		       break;
+				
+				
 			default:System.out.println("Wrong choice");
 				break;
 			}
