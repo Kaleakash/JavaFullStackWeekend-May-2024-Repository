@@ -70,7 +70,7 @@ public class App {
 			con = sc.next();
 		} while (con.equalsIgnoreCase("y"));
 		System.out.println("Thank you!");
-
+		sc.close();
 	}
 
 }
