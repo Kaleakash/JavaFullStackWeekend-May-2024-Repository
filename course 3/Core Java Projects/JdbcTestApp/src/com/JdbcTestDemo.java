@@ -10,9 +10,27 @@ Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_db"
 System.out.println("Connected successfully");
 	Statement stmt = con.createStatement();
 	
-		int result = stmt.executeUpdate("insert into employee values(5,'Neena',27000)");
+		// Insert query 
+//		int result = stmt.executeUpdate("insert into employee values(5,'Neena',27000)");
+//		if(result>0) {
+//			System.out.println("Record inserted succesfully");
+//		}
+		
+		// delete query 
+//		int result = stmt.executeUpdate("delete from employee where id=1");
+//		if(result>0) {
+//			System.out.println("Record deleted succesfully");
+//		}else {
+//			System.out.println("Record not present");
+//		}
+	
+		// update 
+		
+		int result = stmt.executeUpdate("update employee set salary =45000 where id=2");
 		if(result>0) {
-			System.out.println("Record inserted succesfully");
+			System.out.println("Record updated succesfully");
+		}else {
+			System.out.println("Record not present");
 		}
 		
 		stmt.close();
