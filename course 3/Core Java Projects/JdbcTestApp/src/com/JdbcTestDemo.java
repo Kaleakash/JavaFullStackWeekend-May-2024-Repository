@@ -26,13 +26,20 @@ System.out.println("Connected successfully");
 	
 		// update 
 		
-		int result = stmt.executeUpdate("update employee set salary =45000 where id=2");
-		if(result>0) {
-			System.out.println("Record updated succesfully");
-		}else {
-			System.out.println("Record not present");
-		}
+//		int result = stmt.executeUpdate("update employee set salary =45000 where id=2");
+//		if(result>0) {
+//			System.out.println("Record updated succesfully");
+//		}else {
+//			System.out.println("Record not present");
+//		}
+		// retrieve records 
 		
+		ResultSet rs = stmt.executeQuery("select * from employee");
+		while(rs.next()) {
+		//System.out.println("id is "+rs.getInt(1)+" Name is "+rs.getString(2)+" Salary "+rs.getFloat(3));
+System.out.println("id is "+rs.getInt("id")+" Name is "+rs.getString("name")+" Salary "+rs.getFloat("salary"));
+		}
+		rs.close();
 		stmt.close();
 		con.close();
 		} catch (Exception e) {
