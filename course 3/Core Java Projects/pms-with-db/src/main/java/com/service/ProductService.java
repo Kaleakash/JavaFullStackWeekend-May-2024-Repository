@@ -9,7 +9,9 @@ import com.dao.ProductDao;
 
 public class ProductService {
 private List<Product> listOfProduct = new ArrayList<Product>();
+
 ProductDao pd = new ProductDao();
+
 public String addProduct(Product product) {
 	
 	if(product.getPrice()<1000) {
@@ -23,50 +25,19 @@ public String addProduct(Product product) {
 }
 
 public String deleteProduct(int pid) {
-		int flag=0;
-	
-		Iterator<Product> li = listOfProduct.iterator();
-		while(li.hasNext()) {
-			Product p = li.next();
-			if(p.getPid()==pid) {
-				li.remove();
-				flag++;
-				break;
+			if(pd.deleteProduct(pid)>0) {
+				return "Product record deleted successfully";
+			}else {
+				return "Product not present";
 			}
-		}
-	
-	if(flag>0) {
-		flag =0;
-		return "Product details removed successfully";
-	}else {
-		return "Product not present";
-	}
-	
-	
 	
 }
 public String updateProduct(Product product) {
-	
-	int flag=0;
-	
-	Iterator<Product> li = listOfProduct.iterator();
-	while(li.hasNext()) {
-		Product p = li.next();
-		if(p.getPid()==product.getPid()) {
-			p.setPrice(product.getPrice());   // new price replace 
-			//p.setPrice(p.getPrice()+product.getPrice());
-			flag++;
-			break;
-		}
+	if(pd.updateProduct(product)>0) {
+		return "Product price updated successfully";
+	}else {
+		return "Product not present";
 	}
-
-if(flag>0) {
-	flag =0;
-	return "Product price updated successfully";
-}else {
-	return "Product not present";
-}
-
 }
 
 
