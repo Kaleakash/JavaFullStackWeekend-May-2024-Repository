@@ -1,5 +1,6 @@
 package com;
 import java.sql.*;
+import java.util.Scanner;
 public class JdbcTestDemo {
 
 	public static void main(String[] args) {
@@ -34,13 +35,33 @@ System.out.println("Connected successfully");
 //		}
 		// retrieve records 
 		
-		ResultSet rs = stmt.executeQuery("select * from employee");
-		while(rs.next()) {
-		//System.out.println("id is "+rs.getInt(1)+" Name is "+rs.getString(2)+" Salary "+rs.getFloat(3));
-System.out.println("id is "+rs.getInt("id")+" Name is "+rs.getString("name")+" Salary "+rs.getFloat("salary"));
+//		ResultSet rs = stmt.executeQuery("select * from employee");
+//		while(rs.next()) {
+//		//System.out.println("id is "+rs.getInt(1)+" Name is "+rs.getString(2)+" Salary "+rs.getFloat(3));
+//System.out.println("id is "+rs.getInt("id")+" Name is "+rs.getString("name")+" Salary "+rs.getFloat("salary"));
+//		}
+//		rs.close();
+//		stmt.close();
+	
+		Scanner sc = new Scanner(System.in);
+		// insert record using PreparedStatement 
+		PreparedStatement pstmt = con.prepareStatement("insert into employee values(?,?,?)");
+		System.out.println("Enter the id");
+		int id  = sc.nextInt();
+			pstmt.setInt(1, id);
+		
+		System.out.println("Enter the name");
+		String name= sc.next();
+			pstmt.setString(2, name);
+		
+		System.out.println("Enter the salary");
+		float salary  = sc.nextFloat();
+			pstmt.setFloat(3, salary);
+		
+		int result = pstmt.executeUpdate();
+		if(result>0) {
+			System.out.println("Record inserted...");
 		}
-		rs.close();
-		stmt.close();
 		con.close();
 		} catch (Exception e) {
 			System.err.println(e);
