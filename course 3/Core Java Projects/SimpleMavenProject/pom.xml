@@ -7,6 +7,9 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <artifactId>SimpleMavenProject</artifactId>
   <version>1</version>
   
+  
+
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
@@ -24,4 +27,4 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
   </dependencies>
   
   
-</project>
+  </project>
