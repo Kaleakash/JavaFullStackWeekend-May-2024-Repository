@@ -25,7 +25,8 @@ public class App {
 			case 1:System.out.println("Plz enter the product id");
 			       pid = sc.nextInt();
 			       System.out.println("Plz enter the product name");
-			       pname = sc.next();
+			       sc.nextLine();		// to hold enter key 
+			       pname = sc.nextLine();	// we can enter more than one word 
 			       System.out.println("Plz enter the product price");
 			       price = sc.nextFloat();
 			       Product  p = new Product(pid, pname, price);

@@ -63,8 +63,8 @@ return null;
 
 
 public List<Product> retrieveProduct() {
-	
-	return listOfProduct;
+	// apply business logic. 
+	return pd.findAllProduct();		// calling dao method which responsible to retrieve the records. 
 }
 
 }
