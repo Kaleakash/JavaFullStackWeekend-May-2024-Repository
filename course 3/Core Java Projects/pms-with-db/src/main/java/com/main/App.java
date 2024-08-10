@@ -23,7 +23,7 @@ public class App {
 			choice = sc.nextInt();
 			switch (choice) {
 			case 1:System.out.println("Plz enter the product id");
-			       pid = sc.nextInt();
+			       pid = sc.nextInt();		// 100 then we hit enter key 
 			       System.out.println("Plz enter the product name");
 			       sc.nextLine();		// to hold enter key 
 			       pname = sc.nextLine();	// we can enter more than one word 
