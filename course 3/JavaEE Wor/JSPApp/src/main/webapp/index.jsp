@@ -15,11 +15,12 @@
 	sum = a+b;
 	System.out.println("Welcome to JSP on console");
 	out.println("Welcome to JSP on browser");
-	out.println("Sum of two number is "+sum);
+	out.println("Sum of two number is "+sum+"<br/>");
 	out.println("<font color='red'>Sum of two number is "+sum+"</font>");
 %>
 <p>Sum of two number is <%=10+20 %></p>
 <font color="red">Sum of <%=a %> and <%=b %> is <%=sum %></font>
-
+<br/>
+<a href="login.jsp">Login Page</a>
 </body>
 </html>
