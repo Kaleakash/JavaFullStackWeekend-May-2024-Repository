@@ -8,9 +8,11 @@
 </head>
 <body>
 <%!String emailid,password; %>
+ 
 <%
 emailid= request.getParameter("emailid");
 password = request.getParameter("password");
+
 if(emailid.equals("akash@gmail.com") && password.equals("123")){
 	out.println("Successfully login");
 	%>
@@ -22,6 +24,8 @@ if(emailid.equals("akash@gmail.com") && password.equals("123")){
 	<jsp:include page="login.jsp"></jsp:include>
 	<%
 }
+
 %>
+
 </body>
 </html>
