@@ -1,5 +1,7 @@
 package com.pms.service;
 
+import java.util.List;
+
 import com.pms.bean.Product;
 import com.pms.dao.ProductDao;
 
@@ -32,4 +34,10 @@ public class ProductService {
 			return "Product not present";
 		}
 	}
+	
+	public List<Product> findAllProduct() {
+		return pd.findAllProducts();
+	}
+	
+	
 }
