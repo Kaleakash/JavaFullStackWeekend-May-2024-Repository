@@ -27,6 +27,7 @@ public class LamdaOperation {
 	};
 	obj2.greeting("John");
 	var a=10;		// declaring generic type of variable. 
+	System.out.println(a);
 	//a="Ravi";
 	
 	}
