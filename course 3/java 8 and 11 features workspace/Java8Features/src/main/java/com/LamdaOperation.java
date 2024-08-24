@@ -13,7 +13,7 @@ public class LamdaOperation {
 	System.out.println("addition "+op1.add(100, 200));
 	Operation op2 = (a,b)->a+b;
 	System.out.println("addition "+op2.add(10, 20));
-	Operation op3 = (int a, int b)->a+b;
+	Operation op3 = (var a, var b)->a+b;
 	System.out.println("addition "+op3.add(1, 2));
 	Operation op4 = (m,n)->{
 		int add = m+n;
@@ -22,9 +22,12 @@ public class LamdaOperation {
 	System.out.println("addition "+op4.add(1000, 2000));
 	Info obj1 = (name)->System.out.println("Welcome user "+name);
 	obj1.greeting("Steven");
-	Info obj2 = (String name)->{
+	Info obj2 = (var name)->{
 		System.out.println("Welcome user with multi line statement "+name);
 	};
 	obj2.greeting("John");
+	var a=10;		// declaring generic type of variable. 
+	//a="Ravi";
+	
 	}
 }
