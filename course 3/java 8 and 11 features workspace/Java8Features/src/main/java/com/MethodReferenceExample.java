@@ -29,5 +29,10 @@ public class MethodReferenceExample {
 		List<Integer> ll = Arrays.asList(10,20,30,40,50,60);
 		ll.stream().forEach(e->System.out.println(e));
 		ll.stream().forEach(System.out::println);
+		ll.stream().forEach(MethodReferenceExample::accept);
+	}
+	
+	public static void accept(Integer i) {
+		System.out.println("Value is "+i);
 	}
 }
