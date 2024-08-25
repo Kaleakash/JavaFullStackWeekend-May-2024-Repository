@@ -1,4 +1,8 @@
 package com;
+
+import java.util.Arrays;
+import java.util.List;
+
 interface Welcome{
 	public int add(int a, int b);
 }
@@ -22,5 +26,8 @@ public class MethodReferenceExample {
 		WelcomeNonStaticImp ref =new WelcomeNonStaticImp();
 		Welcome i3 = ref::add;				// non static method reference 
 		System.out.println(i3.add(10, 20));
+		List<Integer> ll = Arrays.asList(10,20,30,40,50,60);
+		ll.stream().forEach(e->System.out.println(e));
+		ll.stream().forEach(System.out::println);
 	}
 }
