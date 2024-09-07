@@ -19,7 +19,7 @@ import com.pms.service.ProductService;
 @WebServlet("/ProductStoreController")		// this annotation replace servlet and servlet-mapping tag
 public class ProductStoreController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    // int avl=1;  
     /**
      * @see HttpServlet#HttpServlet()
      */
