@@ -14,7 +14,9 @@ public class DemoTest {
 	Resource res = new ClassPathResource("beans.xml");		// load xml file
 	BeanFactory obj = new XmlBeanFactory(res);				// get the Bean reference.
 	Employee e1 = (Employee)obj.getBean("emp1");
+	Employee e2 = obj.getBean("emp1", Employee.class);
 	e1.display();
+	e2.display();
 	}
 
 }
