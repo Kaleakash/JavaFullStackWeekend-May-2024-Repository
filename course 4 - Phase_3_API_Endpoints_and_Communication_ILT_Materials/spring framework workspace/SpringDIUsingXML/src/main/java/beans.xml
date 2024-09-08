@@ -15,8 +15,21 @@
 
 <bean class="com.bean.Employee" id="emp3">
 	<property name="id" value="101"></property>
-	
 	<property name="salary" value="14000"></property>
 	<property name="name" value="Raju"></property>
 </bean>
+
+<bean class="com.bean.Address" id="address">
+	<property name="city" value="Bangalore"></property>
+	<property name="state" value="Kar"></property>
+</bean>
+
+
+<bean class="com.bean.Employee" id="employee">
+	<property name="id" value="102"></property>
+	<property name="name" value="Steven"></property>
+	<property name="salary" value="35000"></property>
+	
+</bean>
+
 </beans>
