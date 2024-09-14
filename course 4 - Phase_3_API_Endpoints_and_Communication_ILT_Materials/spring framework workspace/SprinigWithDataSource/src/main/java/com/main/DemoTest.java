@@ -1,6 +1,8 @@
 package com.main;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import org.springframework.context.ApplicationContext;
@@ -22,7 +24,8 @@ float salary;
 int choice;
 String result;
 	do {
-		System.out.println("1: Add Employee 3 :Delete Employee 2: Update Employee 4 :Retrieve Employee");
+		System.out.println("1: Add Employee 3 :Delete Employee 2: Update Employee 4 :Retrieve Employee"
+				+ "5 Retreive Employee as Map format");
 		System.out.println("Enter your choice");
 		 choice = sc.nextInt();
 		 switch (choice) {
@@ -62,6 +65,12 @@ String result;
 					System.out.println(emp);
 				}
 			break;
+		case 5 :List<Map<String, Object>> mm = es.getEmployeeInAsMap();
+		        Iterator<Map<String,Object>> li = mm.iterator();
+		        while(li.hasNext()) {
+		        	Map<String,Object> m = li.next();
+		        	System.out.println(m);
+		        }
 		default:System.out.println("wrong choice");
 			break;
 		}
