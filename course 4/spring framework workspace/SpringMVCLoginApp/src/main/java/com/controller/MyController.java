@@ -10,9 +10,17 @@ public class MyController {
 
 	@RequestMapping(value = "hello",method = RequestMethod.GET)
 	public ModelAndView sayHello() {
-		System.out.println("I Came Here");
+		System.out.println("I Came Here with Hello");
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("display1.jsp");
+		return mav;
+	}
+	
+	@RequestMapping(value = "hi",method = RequestMethod.GET)
+	public ModelAndView sayHi() {
+		System.out.println("I Came Here with Hi");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("display2.jsp");
 		return mav;
 	}
 }
