@@ -13,4 +13,14 @@ public class MyController {
 		System.out.println("before index page open this method called.");
 		return "index";		// using view resolver it search page inside templates model.
 	}
+	
+	// http://localhost:9090/loginPage
+	
+	@RequestMapping(value = "loginPage",method = RequestMethod.GET)
+	public String loginPageOpen() {
+		System.out.println("Login Page open");
+		return "login";		// using view resolver it search page inside templates model.
+	}
+	
+	
 }

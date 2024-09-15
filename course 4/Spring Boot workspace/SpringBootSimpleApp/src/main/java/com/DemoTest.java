@@ -10,6 +10,7 @@ public class DemoTest {
 		// TODO Auto-generated method stub
 		// start the application 
 		SpringApplication.run(DemoTest.class, args);
+		System.out.println("spring boot up");
 	}
 
 }
