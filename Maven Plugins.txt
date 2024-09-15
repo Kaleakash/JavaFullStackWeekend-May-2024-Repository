@@ -7,6 +7,15 @@ Java version
   </properties>
 
 
+H2 Database 
+
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>2.2.222</version>
+    <scope>runtime</scope>
+</dependency>
+
 My SQL Connector for 8.x version 
 
 <dependency>
@@ -188,6 +197,18 @@ Spring context
     <version>5.2.12.RELEASE</version>
 </dependency>
 
+
+
+
+@PostConstruct and @PreDestroy dependency 
+
+<dependency>
+  <groupId>javax.annotation</groupId>
+  <artifactId>javax.annotation-api</artifactId>
+  <version>1.3.2</version>
+</dependency>
+
+
 Spring JDBC 
 
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
@@ -196,6 +217,7 @@ Spring JDBC
     <artifactId>spring-jdbc</artifactId>
     <version>5.2.12.RELEASE</version>
 </dependency>
+
 
 spring mvc 
 
@@ -472,6 +494,37 @@ jwt token
 	</dependency>
 
 
+jwt token with 3.x version 
+
+			<dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>0.11.5</version>
+    </dependency>
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>0.11.5</version>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-jackson</artifactId>
+        <version>0.11.5</version>
+        <scope>runtime</scope>
+    </dependency>
+
+
+
+database details in application.properties file with h2 database 
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.username=sa
+spring.datasource.password=test
+spring.jpa.hibernate.ddl-auto=update 
+spring.h2.console.enabled=true
+
+
 
 database details in application.properties file 
 
@@ -481,6 +534,15 @@ spring.datasource.username=root
 spring.datasource.password=root@123
 spring.jpa.hibernate.ddl-auto=update 
 
+
+database details for mongo db in application.properties file 
+
+spring.data.mongodb.database=testdb
+spring.data.mongodb.uri=mongodb://localhost:27017/testdb
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+# spring.data.mongodb.username=myUser
+# spring.data.mongodb.password=myPassword
 
 
 database details in application.properties file 
@@ -509,6 +571,13 @@ spring.r2dbc.url=r2dbc:mysql://localhost:3306/mydb1?serverZoneId=IST
 spring.r2dbc.username=root
 spring.r2dbc.password=root@123
 
+spring security custom username and password 
+
+application.properties 
+
+spring.security.user.name=Akash
+spring.security.user.password=123
+
 
 with security configuration 
 
@@ -518,6 +587,24 @@ spring.datasource.username=root
 spring.datasource.password=root@123
 spring.jpa.hibernate.ddl-auto=update
 
+spring boot with redis 
+
+spring.cache.type=redis
+spring.redis.host=localhost
+spring.redis.port=6379
+spring.redis.password=yourpassword (if required)
+
+
+#spring boot actuator 
+# Enable all actuator endpoints
+management.endpoints.web.exposure.include=*
+# Customize the health check information
+management.endpoint.health.show-details=always
+# Enable metrics collection
+management.metrics.enabled=true
+info.app.name=Spring Actuator Demo
+info.app.description=Demo application for Spring Boot Actuator
+info.app.version=1.0.0
 
 
 swagger dependency 
