@@ -23,4 +23,10 @@ public class MyController {
 	}
 	
 	
+	@RequestMapping(value = "signUpPage",method = RequestMethod.GET)
+	public String openSignUpPage() {
+		System.out.println("SignUp Page");
+		return "signup";		// using view resolver it search page inside templates model.
+	}
+	
 }
