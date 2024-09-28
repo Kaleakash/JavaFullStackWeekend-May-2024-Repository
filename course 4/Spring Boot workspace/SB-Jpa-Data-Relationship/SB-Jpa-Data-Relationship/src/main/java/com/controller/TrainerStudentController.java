@@ -74,10 +74,9 @@ public class TrainerStudentController {
 		tt.setTech("");
 		tt.setTid(0);
 		tt.setTname("");
-		ss.setAge(0);
-		ss.setSid(0);
-		ss.setSname("");
-		ss.setTsid(0);
+//		ss.setAge(0);
+//		ss.setSname("");
+//		ss.setTsid(0);
 		mm.addAttribute("trainers", trainers);
 		mm.addAttribute("students", students);
 		mm.addAttribute("result", result);

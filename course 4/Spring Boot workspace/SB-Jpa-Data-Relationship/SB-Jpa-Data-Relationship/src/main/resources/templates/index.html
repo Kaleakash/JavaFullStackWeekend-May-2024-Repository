@@ -58,11 +58,11 @@
 		<th>TId</th>
 		
 	</tr>
-	<tr th:each="student:${students}">
-		<td th:text="${student.sid}"></td>
-		<td th:text="${student.sname}"></td>
-		<td th:text="${student.age}"></td>
-		<td th:text="${student.tsid}"></td>
+	<tr th:each="ss:${students}">
+		<td th:text="${ss.sid}"></td>
+		<td th:text="${ss.sname}"></td>
+		<td th:text="${ss.age}"></td>
+		<td th:text="${ss.tsid}"></td>
 	</tr>
 </table>
 </body>
