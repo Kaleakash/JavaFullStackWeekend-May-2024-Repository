@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.entity.Trainer;
 import com.service.TrainerService;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 
 @Controller
 public class TrainerController {
@@ -25,13 +27,21 @@ public class TrainerController {
 		List<Trainer> trainers = trainerService.findAllTrainer();
 		mm.addAttribute("trainers", trainers);
 		mm.addAttribute("trainer", tt);
+		mm.addAttribute("submitButton", "Store Product");
 		return "index";
 	}
 	
 	
-	@RequestMapping(value = "storeTrainer",method = RequestMethod.POST)
-	public String storeTrainer(Model mm, Trainer tt) {
-		String result = trainerService.storeTrainer(tt);
+	@RequestMapping(value = "storeOrUpdateTrainer",method = RequestMethod.POST)
+	public String storeTrainer(Model mm, Trainer tt, HttpServletRequest req) {
+		String buttonNameValue = req.getParameter("b1");
+		//System.out.println(buttonNameValue);
+		String result = "";
+		if(buttonNameValue.equals("Store Product")) {
+			result = trainerService.storeTrainer(tt);
+		}else {
+			result = trainerService.updateTrainerTechnology(tt);
+		}
 		List<Trainer> trainers = trainerService.findAllTrainer();
 		tt.setTech("");
 		tt.setTid(0);
@@ -39,6 +49,7 @@ public class TrainerController {
 		mm.addAttribute("trainers", trainers);
 		mm.addAttribute("result", result);
 		mm.addAttribute("trainer", tt);
+		mm.addAttribute("submitButton", "Store Product");
 		return "index";
 	}
 	
@@ -51,6 +62,19 @@ public class TrainerController {
 		mm.addAttribute("result", result);
 		mm.addAttribute("trainers", trainers);
 		mm.addAttribute("trainer", tt);
+		mm.addAttribute("submitButton", "Store Product");
+		return "index";
+	}
+	
+	
+	@RequestMapping(value = "findTrainer",method = RequestMethod.GET)
+	public String findTrainerById(Model mm, Trainer tt, @RequestParam("tid") int tid) {
+		//System.out.println("Delete method called.."+tid);
+		tt = trainerService.findTrainerById(tid);	// tt hold trainer details retrieve from db. 
+		List<Trainer> trainers = trainerService.findAllTrainer();
+		mm.addAttribute("trainers", trainers);
+		mm.addAttribute("trainer", tt);		// tt hold trainer record retrieve from db. 
+		mm.addAttribute("submitButton", "Update Product");
 		return "index";
 	}
 }

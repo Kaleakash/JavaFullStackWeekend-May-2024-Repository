@@ -50,4 +50,14 @@ public class TrainerService {
 		}
 	}
 	
+	public Trainer findTrainerById(int tid) {		// it pass 
+		Optional<Trainer> result = trainerRepository.findById(tid);
+		if(result.isPresent()){
+			Trainer t = result.get();	
+			return t;				// return trainer object. 
+		}else {
+			return null;	
+		}
+	}
+	
 }
