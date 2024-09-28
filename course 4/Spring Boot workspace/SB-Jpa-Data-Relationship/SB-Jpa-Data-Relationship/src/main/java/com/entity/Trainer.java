@@ -1,14 +1,28 @@
 package com.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Trainer {
 @Id
-private int tid;
-private String tname;
-private String tech;
+private int tid;					// tid column 
+private String tname;				// tname column 
+private String tech;				// tech
+@OneToMany
+@JoinColumn(name = "tsid")				// you join to column in student table as FK 
+private List<Student> students;			// not required join 	
+public List<Student> getStudents() {
+	return students;
+}
+public void setStudents(List<Student> students) {
+	this.students = students;
+}
 public int getTid() {
 	return tid;
 }
