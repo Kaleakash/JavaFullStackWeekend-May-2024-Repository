@@ -32,3 +32,9 @@ public class FormatController {
 			return "<abc>Welcome to Rest API using @Restcontroller</abc>";
 		}
 }
+
+
+
+
+
+
