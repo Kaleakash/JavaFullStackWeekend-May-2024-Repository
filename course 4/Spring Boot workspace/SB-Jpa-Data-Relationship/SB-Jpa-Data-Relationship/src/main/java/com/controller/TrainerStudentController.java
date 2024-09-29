@@ -47,7 +47,7 @@ public class TrainerStudentController {
 		String buttonNameValue = req.getParameter("b1");
 		//System.out.println(buttonNameValue);
 		String result = "";
-		if(buttonNameValue.equals("Store Product")) {
+		if(buttonNameValue.equals("Store Trainer")) {
 			result = trainerService.storeTrainer(tt);
 		}else {
 			result = trainerService.updateTrainerTechnology(tt);
