@@ -49,4 +49,27 @@ public class ProductService {
 		}
 	}
 	
+	public String deleteProduct(int pid) {
+		Optional<Product> result = productRepository.findById(pid);
+		if(result.isPresent()) {
+			productRepository.deleteById(pid);
+			return "Product deleted successfully";
+		}else {
+			return "Product not present";
+		}
+	}
+	
+	public String updateProduct(Product product) {
+		Optional<Product> result = productRepository.findById(product.getPid());
+		if(result.isPresent()) {
+			Product p = result.get();
+			p.setPrice(product.getPrice());
+			p.setQty(product.getQty());
+			Product pp = productRepository.saveAndFlush(p);
+			System.out.println(pp);
+			return "Product details updated successfully";
+		}else {
+			return "Product not present";
+		}
+	}
 }
