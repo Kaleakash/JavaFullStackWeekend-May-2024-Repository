@@ -62,6 +62,7 @@ public class AccountService {
 	}
 	
 	public String findBalanceUsingEmailId(String emailid) {
+	System.err.println("Client send request........");
 		try {
 			return "Your balance is "+accountRepository.findBalanceByEmailId(emailid);
 		} catch (Exception e) {
