@@ -3,6 +3,7 @@ package com.entity;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
@@ -14,7 +15,7 @@ public class Trainer {
 private int tid;					// tid column 
 private String tname;				// tname column 
 private String tech;				// tech
-@OneToMany
+@OneToMany(fetch = FetchType.EAGER)
 @JoinColumn(name = "tsid")				// you join to column in student table as FK 
 private List<Student> students;			// not required join 	
 public List<Student> getStudents() {

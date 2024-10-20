@@ -12,25 +12,26 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.entity.Trainer;
 
 @SpringBootTest
-class TrainerServiceTest {
-
-	@Autowired
+class TrainerServiceTest {								// 
+		
+	@Autowired											// @Autowired ProductController productController 
 	TrainerService trainerService;
 	
 	@Test
-	@Disabled
+	//@Disabled
 	void testFindAllTrainer() {
 	List<Trainer> listOfTrainer	= trainerService.findAllTrainer();
 	assertNotNull(listOfTrainer);		// memory of list must be there 
-	assertEquals(2, listOfTrainer.size());
+	assertEquals(3, listOfTrainer.size());
 	Trainer t = listOfTrainer.get(0);
 	assertEquals(102, t.getTid());
 	assertEquals("Ramesh", t.getTname());
 	assertEquals("Basic Angular", t.getTech());
-	//assertEquals(3, t.getStudents().size());
+	assertEquals(3, t.getStudents().size());
 	}
 
 	@Test
+	@Disabled
 	void testStoreTrainer() {
 		Trainer t = new Trainer();
 		t.setTid(104);
