@@ -22,7 +22,7 @@ public class BackendMicroServiceAppApplication {
 	@Autowired
 	LoginRepository loginRepository;
 	
-	@PostConstruct
+	@PostConstruct			// this annotation method called after all resource ready base upon the project. 
 	public void init() {
 		System.out.println("This method called..");
 		Login ll = new Login();
